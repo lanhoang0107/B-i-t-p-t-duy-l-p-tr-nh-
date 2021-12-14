@@ -1,0 +1,53 @@
+# Lăng Hoàng Lan 
+# K214060398
+# Bài tập tính doanh thu bán ip
+
+# tính doanh thu
+
+def Capnhatdoanhthu(hanghoa,loaihang,soluong,tongdoanhthu):
+    tongdoanhthu = hanghoa[loaihang-1][1]*soluong
+    return tongdoanhthu
+    
+# khai báo    
+
+hanghoa = [["ip 13",100],["ip 13 pro", 150],["ip 13 pro max",200],["ip mini",80]]
+
+gia = [100, 150, 200, 80]
+ 
+tongdoanhthu = 0
+
+donhang = 0
+
+
+# lựa chọn loại hàng 
+
+while True:
+    print
+    print(" ∆ Chọn một mặt hàng sau: \n1: ip 13\n2: ip 13 pro\n3: ip 13 pro max\n4: ip mini")
+    choice = int(input(">> Chọn mặt hàng: "))
+    soluong = int(input(">> Nhập số lượng: "))
+    if (choice > 0) and (choice < 4):
+           if choice==1:
+                gia=gia[0]
+           if choice==2:
+                gia=gia[1]
+           if choice==3:
+                gia==gia[2]
+           if choice==4:
+                gia==gia[3]
+    donhang = gia*soluong
+    print (" ∆ Đơn hàng của bạn: ", donhang)
+    print ("°"*70)
+        
+# doanh thu tổng 
+
+    tongdoanhthu = Capnhatdoanhthu(hanghoa,choice,soluong,tongdoanhthu)
+    
+# bán hay dừng 
+
+    bantiep = input(" ∆ Tiếp tục bán ? ( gõ 0 (không) hoặc 1 (có))")
+    if bantiep == "0": 
+        break 
+
+print ( "°"*70)
+print ( " ∆ Doanh thu cả ngày: ", tongdoanhthu )
